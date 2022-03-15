@@ -67,7 +67,7 @@ class RecipeCommandToRecipeTest {
                 .servings(SERVINGS)
                 .source(SOURCE)
                 .url(URL)
-                .notes(NoteCommand.builder().id(NOTES_ID).build())
+                .note(NoteCommand.builder().id(NOTES_ID).build())
                 .ingredients(
                         Set.of(
                                 IngredientCommand.builder().id(INGREDIENT_ID_1).build(),

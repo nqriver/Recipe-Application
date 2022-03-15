@@ -51,7 +51,7 @@
                 <h5>Difficulty:</h5>
               </div>
               <div class="col-md-3">
-                <p th:text="${recipe.getDifficulty().name().toLowerCase()}">Easy</p>
+                <p th:text="${recipe.difficulty?.name()?.toLowerCase()}">Easy</p>
               </div>
             </div>
             <div class="row">
@@ -79,7 +79,7 @@
                 <h5>URL:</h5>
               </div>
               <div class="col-md-3">
-                <p th:text="${recipe.source}">http://www.example.com</p>
+                <p th:text="${recipe.url}">http://www.example.com</p>
               </div>
             </div>
           </div>
@@ -132,7 +132,7 @@
           <div class="panel-body">
             <div class="row">
               <div class="col-md-12">
-                <p th:text="${recipe.getNote().getContent()}">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                <p th:text="${recipe.note.getContent()}">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
                   Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient
                   montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
                   Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.

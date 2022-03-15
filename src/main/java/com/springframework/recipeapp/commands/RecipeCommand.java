@@ -27,7 +27,7 @@ public class RecipeCommand {
     private Set<IngredientCommand> ingredients = new HashSet<>();
 
     private Difficulty difficulty;
-    private NoteCommand notes;
+    private NoteCommand note;
 
     @Builder.Default
     private Set<CategoryCommand> categories = new HashSet<>();
