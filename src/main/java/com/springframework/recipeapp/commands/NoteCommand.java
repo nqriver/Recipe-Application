@@ -1,13 +1,13 @@
 package com.springframework.recipeapp.commands;
 
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class NoteCommand {
     Long id;
     String content;
