@@ -5,9 +5,12 @@ import lombok.*;
 import javax.persistence.*;
 
 @Data
+@Entity
 @ToString(exclude = "recipe")
 @EqualsAndHashCode(exclude = "recipe")
-@Entity
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Note {
 
     @Id
