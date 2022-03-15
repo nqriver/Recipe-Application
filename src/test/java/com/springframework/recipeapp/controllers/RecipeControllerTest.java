@@ -43,7 +43,7 @@ class RecipeControllerTest {
 
         when(recipeService.findById(anyLong())).thenReturn(recipe);
 
-        mockMvc.perform(get("/recipe/show/1"))
+        mockMvc.perform(get("/recipe/1/show"))
                 .andExpect(status().isOk())
                 .andExpect(view().name("recipe/show"));
     }
@@ -69,6 +69,19 @@ class RecipeControllerTest {
                 .param("descriprion", "some string")
         )
                 .andExpect(status().is3xxRedirection())
-                .andExpect(view().name("redirect:/recipe/show/2"));
+                .andExpect(view().name("redirect:/recipe/2/show"));
+    }
+
+    @Test
+    public void testGetUpdateView() throws Exception {
+        RecipeCommand command = new RecipeCommand();
+        command.setId(2L);
+
+        when(recipeService.findCommandById(anyLong())).thenReturn(command);
+
+        mockMvc.perform(get("/recipe/1/update"))
+                .andExpect(status().isOk())
+                .andExpect(view().name("recipe/recipeform"))
+                .andExpect(model().attributeExists("recipe"));
     }
 }
