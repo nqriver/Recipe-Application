@@ -34,7 +34,7 @@
                 <ul>
                   <li th:remove="all">cat one</li>
                   <li th:remove="all">cat two</li>
-                  <li th:each="category : ${recipe.categories}" th:text="${category.getDescription()}">category
+                  <li th:each="category : ${recipe.categories}" th:text="${category?.getDescription()}">category
                     description
                   </li>
                 </ul>
@@ -45,7 +45,7 @@
                 <h5>Prep Time:</h5>
               </div>
               <div class="col-md-3">
-                <p th:text="${recipe.getPreparingTime()} + ' min'">30 min</p>
+                <p th:text="${recipe.preparingTime} + ' min'">30 min</p>
               </div>
               <div class="col-md-3">
                 <h5>Difficulty:</h5>
@@ -91,7 +91,7 @@
           <div class="panel-body">
             <div class="row">
               <div class="col-md-12">
-                <ul>
+                <ul th:if="${not #lists.isEmpty(recipe.ingredients)}">
                   <li th:remove="all">1 Cup of milk</li>
                   <li th:remove="all">1 Teaspoon of chocolate</li>
                   <li th:remove="all">1 Teaspoon of Sugar</li>
@@ -132,7 +132,7 @@
           <div class="panel-body">
             <div class="row">
               <div class="col-md-12">
-                <p th:text="${recipe.note.getContent()}">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                <p th:text="${recipe.note?.getContent()}">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
                   Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient
                   montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
                   Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.
