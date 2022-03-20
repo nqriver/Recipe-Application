@@ -66,10 +66,11 @@
                                 </div>
                                 <div class="col-md-3 form-group">
                                     <label>Difficulty:</label>
-                                    <select class="form-control">
-                                        <option>Easy</option>
-                                        <option>Medium</option>
-                                        <option>Hard</option>
+
+                                    <select class="form-control" th:field="*{difficulty}">
+                                        <!--/*@thymesVar id="values" type="com.springframework.recipeapp.domain.Difficulty"*/-->
+                                        <option th:each="diffOption : ${T(com.springframework.recipeapp.domain.Difficulty).values()}"
+                                                th:value="${diffOption}" th:text="${diffOption.displayValue}"></option>
                                     </select>
                                 </div>
                             </div>
